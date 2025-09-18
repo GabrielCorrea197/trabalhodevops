@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Trabalho DevOps - UNINTER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-block;
+        }
+        h1 {
+            margin: 0 0 20px;
+            font-size: 2.5em;
+        }
+        .counter {
+            font-size: 1.5em;
+            background: #ff6b6b;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .author {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Olá, DevOps!</h1>
+        <p>Bem-vindo à minha aplicação de demonstração.</p>
+        <p>Visitas nesta máquina: <span class="counter" id="counter">0</span></p>
+        <p class="author">Criado por: Gabriel Correa</p>
+    </div>
+
+    <script>
+        // Contador de visitas usando localStorage
+        let count = localStorage.getItem('visitas') || 0;
+        count++;
+        localStorage.setItem('visitas', count);
+        document.getElementById('counter').innerText = count;
+    </script>
+</body>
+</html>
