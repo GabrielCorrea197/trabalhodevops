@@ -1,0 +1,24 @@
+name: CI/CD DevOps - Gabriel Correa
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t devops-app .
+
+      - name: Simulate deploy
+        run: |
+          echo "✅ Pipeline executado com sucesso!"
+          echo "Aplicação pronta para deploy."
